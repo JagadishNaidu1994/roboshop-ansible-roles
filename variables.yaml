@@ -1,1 +1,4 @@
 MONGODB_HOST: mongo.jagadishdaws.online
+CATALOGUE_HOST: catalogue.jagadishdaws.online
+REDIS_HOST: redis.jagadishdaws.online
+
