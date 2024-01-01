@@ -4,5 +4,9 @@ REDIS_HOST: redis.jagadishdaws.online
 PAYMENT_HOST: payment.jagadishdaws.online
 USER_HOST: user.jagadishdaws.online
 SHIPPING_HOST: shipping.jagadishdaws.online
+MYSQL_HOST: mysql.jagadishdaws.online
+RABBITMQ_HOST: rabbit.jagadishdaws.online
+CART_HOST: cart.jagadishdaws.online
+DISPATCH_HOST: dispatch.jagadishdaws.online
 
 
