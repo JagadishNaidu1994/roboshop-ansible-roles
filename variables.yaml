@@ -1,7 +1,7 @@
 MONGODB_HOST: mongo.jagadishdaws.online
 CATALOGUE_HOST: catalogue.jagadishdaws.online
 REDIS_HOST: redis.jagadishdaws.online
-PAYMENT_HOST: payment.jagadishdaws.online
+PAYMENT_HOST: payments.jagadishdaws.online
 USER_HOST: user.jagadishdaws.online
 SHIPPING_HOST: shipping.jagadishdaws.online
 MYSQL_HOST: mysql.jagadishdaws.online
