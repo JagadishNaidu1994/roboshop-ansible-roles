@@ -1,3 +1,8 @@
+# - name: "Copying {{component}} service file"
+#   ansible.builtin.copy:
+#     src: "{{component}}.service"
+#     dest: "/etc/systemd/system/{{component}}.service"
+
 - name: "Copying {{component}} service file"
   ansible.builtin.copy:
     src: "{{component}}.service"
