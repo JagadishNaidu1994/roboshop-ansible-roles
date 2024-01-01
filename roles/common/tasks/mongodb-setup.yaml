@@ -6,6 +6,7 @@
 - name: install mongodb shell
   ansible.builtin.package:
     name: mongodb-org-shell
+    state: present
 
 - name: get the entries count
   ansible.builtin.command: mongo --host mongo.jagadishdaws.online --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
@@ -17,6 +18,12 @@
   register: entries_count
   when: component == "user"
 
-- name: "load {{component}} data"
-  ansible.builtin.command: "mongo --host mongo.jagadishdaws.online < /app/schema/{{component}}.js"
-  when: product_count.stdout == "0"
+- name: "load catalogue data"
+  ansible.builtin.shell: "mongo --host mongo.jagadishdaws.online < /app/schema/{{component}}.js"
+  when: component == "catalogue" and products_count.stdout == "0"
+  ignore_errors: true
+
+- name: "load user data"
+  ansible.builtin.shell: "mongo --host mongo.jagadishdaws.online < /app/schema/{{component}}.js"
+  when: component == "user" and users_count.stdout == "0"
+  ignore_errors: true
