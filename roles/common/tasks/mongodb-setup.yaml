@@ -13,12 +13,10 @@
   when: component == "catalogue"
 
 - name: get the entries count
-
-  ansible.builtin.command: mongo --host mongodb.jagadishdaws.online --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
+  ansible.builtin.command: mongo --host mongo.jagadishdaws.online --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
   register: entries_count
   when: component == "user"
 
-- name: load {{component}} data
-
-  ansible.builtin.command: "mongo --host mongodb.jagadishdaws.online < /app/schema/{{component}}.js"
+- name: "load {{component}} data"
+  ansible.builtin.command: "mongo --host mongo.jagadishdaws.online < /app/schema/{{component}}.js"
   when: product_count.stdout == "0"
