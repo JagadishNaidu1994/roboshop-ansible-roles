@@ -8,14 +8,14 @@
     name: mongodb-org-shell
     state: present
 
-- name: get the entries count
+- name: get the catalogue entries count
   ansible.builtin.command: mongo --host mongo.jagadishdaws.online --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
-  register: entries_count
+  register: products_count
   when: component == "catalogue"
 
-- name: get the entries count
+- name: get the user entries count
   ansible.builtin.command: mongo --host mongo.jagadishdaws.online --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
-  register: entries_count
+  register: users_count
   when: component == "user"
 
 - name: "load catalogue data"
